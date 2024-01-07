@@ -1,0 +1,229 @@
+﻿@{
+    ViewData["Title"] = "Iniciativa Saúde da Cidade";
+}
+@{
+    if (ViewBag.Message != null)
+    {
+        <div class="alert alert-success">@ViewBag.Message</div>
+    }
+    if (ViewBag.ErrorMessage != null)
+    {
+        <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+    }
+}
+<div class="container py-4">
+
+    <!-- Seção de texto sobre vida saudável e sobre a iniciativa -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <h1 class="mb-4">Iniciativa Saúde da Cidade</h1>
+            <p>Adotar um estilo de vida saudável é fundamental para o bem-estar.
+                Inclui comer alimentos nutritivos, manter-se ativo e relaxar a
+                mente. Nosso foco está em escolhas saudáveis que beneficiam tanto
+                o corpo quanto a mente, promovendo uma vida mais plena e enérgica.</p>
+
+
+            <p>Nossa 'Iniciativa Saúde para Todos' busca inspirar uma comunidade
+                mais saudável. Oferecemos eventos e atividades educativas sobre
+                nutrição e exercícios, visando motivar mudanças positivas na saúde
+                e no estilo de vida de nossa comunidade.</p>
+        </div>
+
+        <!-- Lado direito: Imagem -->
+        <div class="col-md-6">
+            <img src="~/img/img1.jpg" alt="Descrição da Imagem" class="img-fluid">
+        </div>
+    </div>
+
+    <!-- Seção de formulário e links-->
+    <div class="row">
+        <div class="col-lg-6">
+            <h2 class="mb-3">Fique em contato!</h2>
+            <p>Nos mande uma mensagem e fique por dentro de nossos eventos</p>
+            <form action="/Home/Cadastrar" method="POST">
+                <div class="form-group">
+                    <label for="Nome">Nome:</label>
+                    <input type="text" class="form-control" id="Nome" name="Nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="Email">Email:</label>
+                    <input type="email" class="form-control" id="Email" name="Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="Mensagem">Mensagem (opcional):</label>
+                    <textarea class="form-control" id="Mensagem" name="Mensagem"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="row">
+                <!-- Card Agenda de Eventos -->
+                <div class="col-md-4">
+                    <a href="#" class="card-link" data-toggle="modal" data-target="#modalAgendaEventos">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="~/img/img2.jpg" alt="Agenda de Eventos">
+                            <div class="card-body">
+                                <p class="card-text">Agenda de eventos</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Card Dicas de Vida Saudável -->
+                <div class="col-md-4">
+                    <a href="#" class="card-link" data-toggle="modal" data-target="#modalDicasVidaSaudavel">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="~/img/img3.jpg" alt="Dicas de Vida Saudável">
+                            <div class="card-body">
+                                <p class="card-text">Dicas de vida saudável</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <!-- Card Apoiadores -->
+                <div class="col-md-4">
+                    <a href="#" class="card-link" data-toggle="modal" data-target="#modalApoiadores">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="~/img/img4.jpg" alt="Apoiadores">
+                            <div class="card-body">
+                                <p class="card-text">Apoiadores</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+            <!-- Modais -->
+            <!-- Modal Agenda de Eventos -->
+            <div class="modal fade" id="modalAgendaEventos" tabindex="-1" role="dialog"
+                aria-labelledby="modalAgendaEventosLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalAgendaEventosLabel">Agenda de Eventos</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Evento 1 -->
+                            <div class="event-container mb-3">
+                                <h6 class="event-title">Workshop de Alimentação Saudável</h6>
+                                <p class="event-date text-secondary">10 de Julho de 2024, 14h00</p>
+                                <p class="event-description">Participe do nosso Workshop para aprender sobre nutrição e
+                                    receitas saudáveis.</p>
+                            </div>
+
+                            <!-- Evento 2 -->
+                            <div class="event-container mb-3">
+                                <h6 class="event-title">Aula de Yoga ao Ar Livre</h6>
+                                <p class="event-date text-secondary">20 de Julho de 2024, 09h00</p>
+                                <p class="event-description">Relaxe o corpo e mente na nossa aula de Yoga ao ar livre.
+                                </p>
+                            </div>
+
+                            <!-- Evento 3 -->
+                            <div class="event-container mb-3">
+                                <h6 class="event-title">Seminário sobre Bem-Estar Mental</h6>
+                                <p class="event-date text-secondary">5 de Agosto de 2024, 18h00</p>
+                                <p class="event-description">Melhore seu bem-estar mental com estratégias eficazes em
+                                    nosso seminário.</p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Dicas de Vida Saudável -->
+            <div class="modal fade" id="modalDicasVidaSaudavel" tabindex="-1" role="dialog"
+                aria-labelledby="modalDicasVidaSaudavelLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalDicasVidaSaudavelLabel">Dicas de Vida Saudável</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="event-container mb-3">
+                                <h6 class="event-title">Alimentação Saudável</h6>
+                                <p class="event-description">Incorpore uma variedade de frutas e vegetais em suas
+                                    refeições. Nutrientes essenciais e fibras são a chave para um corpo saudável.</p>
+                            </div>
+                            <div class="event-container mb-3">
+                                <h6 class="event-title">Exercícios Físicos Regulares</h6>
+                                <p class="event-description">Mantenha uma rotina de exercícios regulares. Atividades
+                                    como caminhar, nadar ou andar de bicicleta podem melhorar significativamente sua
+                                    saúde cardiovascular.</p>
+                            </div>
+                            <div class="event-container mb-3">
+                                <h6 class="event-title">Mente Sã, Corpo São</h6>
+                                <p class="event-description">Práticas de mindfulness e meditação podem reduzir o
+                                    estresse e promover uma sensação de bem-estar geral.</p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Apoiadores -->
+            <div class="modal fade" id="modalApoiadores" tabindex="-1" role="dialog"
+                aria-labelledby="modalApoiadoresLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalApoiadoresLabel">Título do Modal</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Apoiador 1 -->
+                            <div class="supporter-container mb-3">
+                                <h6 class="supporter-title">Vida Saudável Nutrição</h6>
+                                <p class="supporter-description">Contribuindo com recursos e conhecimento em nutrição, a
+                                    Vida Saudável Nutrição é fundamental para nossas oficinas de alimentação saudável.
+                                </p>
+                            </div>
+
+                            <!-- Apoiador 2 -->
+                            <div class="supporter-container mb-3">
+                                <h6 class="supporter-title">Yoga e Bem-Estar</h6>
+                                <p class="supporter-description">A Yoga e Bem-Estar fornece instrutores para nossas
+                                    aulas de yoga, promovendo o bem-estar físico e mental da comunidade.</p>
+                            </div>
+
+                            <!-- Apoiador 3 -->
+                            <div class="supporter-container mb-3">
+                                <h6 class="supporter-title">Medita Ação</h6>
+                                <p class="supporter-description">Parceiro estratégico em iniciativas de mindfulness, a
+                                    Medita Ação ajuda a levar a meditação a todos os cantos da cidade.</p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+</div>
+
+</div>
